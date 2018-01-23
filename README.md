@@ -1,6 +1,7 @@
 # BookManagement
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.3.
+Simple usage of named router outlets. Flow of Book management.
 
 ## Development server
 
