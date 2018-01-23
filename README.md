@@ -1,7 +1,7 @@
 # BookManagement
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.3.
-Simple usage of named router outlets. Flow of Book management.
+Simple usage of Named Router Uutlets. Flow of Book management. Divides area into three parts and allocates that space specific to author, books and book detail.
 
 ## Development server
 
