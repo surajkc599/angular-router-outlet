@@ -1,0 +1,25 @@
+<div class="bookdetail-container">
+  <div class="header-container">
+    <div>Book Name</div>
+    <div>Book Id</div>
+    <div>Book Author</div>
+  </div>
+  <div class="header-data">
+    <div>{{bookdetails.bookName}}</div>
+    <div>{{bookdetails.bookId}}</div>
+    <div>{{bookdetails.bookAuthor}}</div>
+  </div>
+  <div class="header-info-container">
+    <div>Published Date</div>
+    <div>Available Centres</div>
+  </div>
+  <div class="header-info-data">
+    <div>{{bookdetails.publishedDate}}</div>
+    <ul>
+      <li *ngFor="let place of bookdetails.availableCentres">
+        {{place}}
+      </li>
+    </ul>
+  </div>
+  <button>Add Book to Cart</button>
+</div>

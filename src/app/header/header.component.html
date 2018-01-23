@@ -1,0 +1,14 @@
+<div class="toolbar">
+  <span>Welcome, {{ activeUser }}</span>
+  <div>
+    <button>Show My Cart</button>
+  </div>
+  <div>
+    <a [routerLink]="['bookstore', { outlets: { 'authorslist': ['authors']} } ]">
+      <button>Show Authors</button>
+    </a>
+  </div>
+  <div>
+    <button (click)="signout()">Log Out</button>
+  </div>
+</div>

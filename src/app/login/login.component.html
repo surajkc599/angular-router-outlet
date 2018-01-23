@@ -1,0 +1,17 @@
+<div class="login-panel">
+  <div class="login-container">
+    <div class="logo-container">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/f8/ALTEN-Logo.svg">
+      <h1>Login to Your Account</h1>
+      <h2>WELCOME TO ALTEN NEDERLAND</h2>
+    </div>
+    <div class="textbox-container">
+        <input type="text" name="username" [(ngModel)]="username" placeholder="Username">
+        <input type="password" name="password" [(ngModel)]="password" placeholder="Password">
+    </div>
+    <div class="button-container">
+     <button type="button" class="signin" (click)="signin()">Sign In</button>
+     <button type="button" class="forgot-password" (click)="signout()">Signout</button>
+  </div>
+  </div>
+</div>
