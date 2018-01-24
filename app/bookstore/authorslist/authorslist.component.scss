@@ -1,0 +1,16 @@
+app-authorslist {
+    display: flex;
+}
+ul {
+    padding: 0;
+    li {
+        list-style-type: none;
+        padding: 10px;
+        a {
+            color: white;
+        }
+        a.active {
+            color: green;
+        }
+    }
+}
