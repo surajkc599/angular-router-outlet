@@ -7,13 +7,15 @@ import { BooksComponent } from './books/books.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
 import { AuthorslistComponent } from './authorslist/authorslist.component';
 import { RouterModule } from '@angular/router';
+import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 
 @NgModule({
     declarations: [
         BookstoreComponent,
         BooksComponent,
         BookDetailComponent,
-        AuthorslistComponent
+        AuthorslistComponent,
+        ShoppingcartComponent
     ],
     imports: [
         CommonModule,

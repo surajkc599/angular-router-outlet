@@ -6,6 +6,7 @@ import { AuthorslistComponent } from '../bookstore/authorslist/authorslist.compo
 import { BooksComponent } from '../bookstore/books/books.component';
 import { BookDetailComponent } from '../bookstore/book-detail/book-detail.component';
 import { AuthGuard } from '../shared/auth.guard';
+import { ShoppingcartComponent } from '../bookstore/shoppingcart/shoppingcart.component';
 
 const homeRoutes: Routes = [
     {
@@ -14,12 +15,12 @@ const homeRoutes: Routes = [
                 path: 'bookstore', component: BookstoreComponent, children: [
                     { path: 'authors', component: AuthorslistComponent, outlet: 'authorslist' },
                     { path: 'books/:id', component: BooksComponent, outlet: 'bookslist' },
-                    { path: 'book-detail/:id', component: BookDetailComponent, outlet: 'book-detail' }
+                    { path: 'book-detail/:id', component: BookDetailComponent, outlet: 'book-detail' },
+                    { path: 'cart', component: ShoppingcartComponent, outlet: 'shopping-cart' }
                 ], canActivateChild: [AuthGuard]
             }
         ]
     }
-
 ];
 @NgModule({
     imports: [

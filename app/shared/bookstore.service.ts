@@ -12,8 +12,10 @@ import { BookDetail } from './bookdetail.model';
 export class BookStoreService {
 
     @Output() isDetailCompLoaded = new EventEmitter<boolean>();
+    @Output() shoppingCartListModified = new EventEmitter<number>();
 
     loggedInUser: string;
+    shoppingCartList: BookDetail[] = [];
 
     authors = [
         new Author('Suraj', 1, 'Eindhoven', 27, [
@@ -65,6 +67,7 @@ export class BookStoreService {
 
     clearOnLogOut() {
         this.LoggedInUser = null;
+        this.shoppingCartList = [];
     }
 
     getAuthorsList() {
@@ -79,5 +82,14 @@ export class BookStoreService {
     getBookDetail(bookId: number) {
         const bookDetailObject = this.bookdetails.find(bookDetail => bookDetail.bookId === Number(bookId));
         return bookDetailObject;
+    }
+
+    addToCart(bookdetail: BookDetail) {
+        this.shoppingCartList.push(bookdetail);
+        this.shoppingCartListModified.emit(this.shoppingCartList.length);
+    }
+
+    getShoppingCartList() {
+        return this.shoppingCartList;
     }
 }

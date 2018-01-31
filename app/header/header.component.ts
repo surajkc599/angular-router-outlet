@@ -2,6 +2,9 @@ import { Component, OnInit, Input } from '@angular/core';
 import { BookStoreService } from '../shared/bookstore.service';
 import { Router } from '@angular/router';
 import { UpperCasePipe } from '@angular/common';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/from';
+import { BookDetail } from '../shared/bookdetail.model';
 
 @Component({
   selector: 'app-header',
@@ -11,13 +14,19 @@ import { UpperCasePipe } from '@angular/common';
 export class HeaderComponent implements OnInit {
 
   constructor(private service: BookStoreService, private router: Router) { }
+
   activeUser: string;
+  cartInformation: number;
+
   @Input()
   set loggedInUser(user: string) {
-      this.activeUser = user;
+    this.activeUser = user;
   }
 
   ngOnInit() {
+    this.service.shoppingCartListModified.subscribe((data: number) => {
+      this.cartInformation = data;
+    });
   }
 
   signout() {
@@ -27,5 +36,4 @@ export class HeaderComponent implements OnInit {
       console.log('Route Not activated!');
     });
   }
-
 }

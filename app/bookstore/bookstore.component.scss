@@ -12,9 +12,13 @@ app-bookstore {
         text-align: center;
         box-shadow: 3px 0px 10px 0 rgba(0, 0, 0, 0.2);
     }
+    &.isActive {
+        .shopping-cart-container {
+            display: block;
+        }
+    }
     
 }
-
-div:last-child {
+div:nth-child(3) {
     flex-grow: 2;
 }

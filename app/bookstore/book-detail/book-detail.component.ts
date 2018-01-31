@@ -21,4 +21,8 @@ export class BookDetailComponent implements OnInit {
     });
   }
 
+  addBookToCart() {
+    this.bookdetailService.addToCart(this.bookdetails);
+  }
+
 }

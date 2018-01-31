@@ -1,0 +1,23 @@
+<div class="shopping-cart-container">
+  <h2>
+    Books Added to Cart!
+  </h2>
+  <table *ngIf="isShoppingList;else emptycart">
+    <tr>
+      <th>Book Name</th>
+      <th>Book Author</th>
+    </tr>
+    <tr *ngFor="let bookdetail of shoppingCartList">
+      <td>{{ bookdetail.bookName }}</td>
+      <td>{{ bookdetail.bookAuthor }}</td>
+    </tr>
+  </table>
+  <ng-template #emptycart>
+    <p>
+      Please add books to Cart!
+    </p>
+  </ng-template>
+  <section>
+    <button (click)="closePopUp()">close window</button>
+  </section>
+</div>

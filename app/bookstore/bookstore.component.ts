@@ -1,5 +1,6 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit, ViewEncapsulation, HostBinding } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ActivationStart } from '@angular/router';
 
 @Component({
   selector: 'app-bookstore',
@@ -9,9 +10,14 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class BookstoreComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: Router) { }
+  @HostBinding('class.isActive') isShowCart: boolean = false;
 
   ngOnInit() {
+    this.route.events.subscribe((event: any) => {
+      if (event instanceof ActivationStart && event.snapshot.outlet === 'shopping-cart') {
+        this.isShowCart = true;
+      }
+    });
   }
-
 }

@@ -1,7 +1,10 @@
 <div class="toolbar">
   <span>Welcome, {{ activeUser | uppercase }}</span>
   <div>
-    <button>Show My Cart</button>
+    <a [routerLink]="['bookstore', { outlets: { 'shopping-cart': ['cart', {'shoppingInfo': cartInformation}] } } ]">
+      <button>Show Cart</button>
+    </a>
+    <span>{{cartInformation}}</span>
   </div>
   <div>
     <a [routerLink]="['bookstore', { outlets: { 'authorslist': ['authors']} } ]">
